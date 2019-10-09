@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:local}
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+
+---
+spring:
+  profiles: local
+  datasource:
+    hikari:
+      connection-test-query: SELECT 1L
+      minimum-idle: 1
+      maximum-pool-size: 10
+      pool-name: db_contabilizei-database-pool
+      auto-commit: false
+      connection-timeout: 30000
+    url: "${DB_URL:jdbc:postgresql://localhost:5435/db_contabilizei?ssl=false}"
+    username: "${DB_USER:postgres}"
+    password: "${DB_PASSWORD:123456}"
+  jpa:
+    show-sql: true
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: homolog
+
+---
+spring:
+  profiles: prod

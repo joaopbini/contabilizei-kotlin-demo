@@ -1,0 +1,18 @@
+#Esse arquivo só existe para facilitar uma subida local da imagem, não é utilizada em PROD
+version: '3'
+
+services:
+  database:
+    container_name: "postgres_contabilizei"
+    restart: always
+    image: postgres:9.6.11-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: db_contabilizei
+      TZ: GMT
+      PGDATA: /postgres_data
+    ports:
+    - 5435:5432
+#    volumes:
+#    - ./postgres_data:/postgres_data
