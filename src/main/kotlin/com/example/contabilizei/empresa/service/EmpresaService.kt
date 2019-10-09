@@ -21,4 +21,8 @@ class EmpresaService(private val empresaRepository: EmpresaRepository) {
         return empresaRepository.findByCnpj(cnpj)
     }
 
+    fun findById(cnpj: String): Empresa? {
+        return empresaRepository.findById(cnpj).orElse(null)
+    }
+
 }

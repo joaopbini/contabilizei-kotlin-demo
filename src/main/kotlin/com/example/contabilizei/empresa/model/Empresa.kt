@@ -1,8 +1,8 @@
 package com.example.contabilizei.empresa.model
 
 import com.example.contabilizei.audit.AuditModel
-import javax.persistence.Entity
-import javax.persistence.Id
+import com.example.contabilizei.imposto.model.Imposto
+import javax.persistence.*
 
 @Entity
 data class Empresa(
@@ -12,4 +12,9 @@ data class Empresa(
 
         val razaoSocial: String = ""
 
-) : AuditModel()
+) : AuditModel() {
+
+    @OneToMany(mappedBy = "empresa", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    lateinit var impostos: List<Imposto>
+
+}
