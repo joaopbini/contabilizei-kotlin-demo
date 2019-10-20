@@ -1,11 +1,9 @@
 package com.example.contabilizei.utils
 
-class ExceptionMessageUtil {
+object ExceptionMessageUtil {
 
-    companion object {
-        fun getMessageErro(e: Exception): String {
-            return e.message ?: e.javaClass.simpleName
-        }
+    fun getMessageErro(e: Exception): String {
+        return e.message ?: e.javaClass.simpleName
     }
 
 }

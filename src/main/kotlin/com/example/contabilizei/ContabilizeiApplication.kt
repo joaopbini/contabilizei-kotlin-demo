@@ -13,3 +13,8 @@ fun main(args: Array<String>) {
 	runApplication<ContabilizeiApplication>(*args)
     TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
 }
+
+// todo exception handler
+// notas fiscais
+// calculo de faturamento
+// calculo de imposto

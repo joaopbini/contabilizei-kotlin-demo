@@ -15,4 +15,9 @@ class ImpostoApi(private val impostoService: ImpostoService) {
     @GetMapping("/{id}")
     fun getImposto(@PathVariable("id") id: Long) = impostoService.findById(id)
 
+    @GetMapping("list/{cnpj}")
+    fun getImpostos(@PathVariable("cnpj") cnpj: String,
+                    @RequestParam(required = false, defaultValue = "0") page: Int,
+                    @RequestParam(required = false, defaultValue = "20") size: Int) = impostoService.list(cnpj, page, size)
+
 }

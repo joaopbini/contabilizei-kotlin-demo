@@ -6,6 +6,8 @@ import com.example.contabilizei.imposto.dto.ImpostoDTO
 import com.example.contabilizei.imposto.model.Imposto
 import com.example.contabilizei.imposto.repository.ImpostoRepository
 import com.example.contabilizei.utils.toDateBR
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 
 @Service
@@ -25,6 +27,13 @@ class ImpostoService(private val impostoRepository: ImpostoRepository,
 
     fun findById(id: Long): Imposto? {
         return impostoRepository.findById(id).orElse(null)
+    }
+
+    fun list(cnpj: String, page: Int, size: Int): Page<Imposto> {
+
+        val empresa = empresaService.findById(cnpj) ?: throw EmpresaNotFoundException("Empresa $cnpj não encontrada!")
+
+        return impostoRepository.findByEmpresa(empresa, PageRequest.of(page, size))
     }
 
 }
