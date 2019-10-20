@@ -1,16 +1,14 @@
 package com.example.contabilizei.empresa.service
 
 import com.example.contabilizei.empresa.dto.EmpresaDTO
-import com.example.contabilizei.empresa.extensions.toDto
 import com.example.contabilizei.empresa.model.Empresa
 import com.example.contabilizei.empresa.repository.EmpresaRepository
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.Test
-
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.test.context.junit4.SpringRunner
 import java.util.*
