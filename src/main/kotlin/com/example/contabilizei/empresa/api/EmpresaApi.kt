@@ -12,13 +12,9 @@ class EmpresaApi(private val empresaService: EmpresaService) {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/")
-    fun createEmpresa(@Valid @RequestBody empresaDTO: EmpresaDTO): EmpresaDTO? {
-        return empresaService.create(empresaDTO)
-    }
+    fun createEmpresa(@Valid @RequestBody empresaDTO: EmpresaDTO) = empresaService.create(empresaDTO)
 
     @GetMapping("/{cnpj}")
-    fun getEmpresa(@PathVariable("cnpj") cnpj: String): EmpresaDTO? {
-        return empresaService.findByCnpj(cnpj)
-    }
+    fun getEmpresa(@PathVariable("cnpj") cnpj: String) = empresaService.findByCnpj(cnpj)
 
 }

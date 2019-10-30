@@ -28,7 +28,7 @@ class SwaggerConfig {
     fun api(): Docket {
 
         return Docket(DocumentationType.SWAGGER_2)
-                .groupName(MICROSSERVICO_PAGAMENTO_AUTOMATICO)
+                .groupName(CONTABILIZEI_SERVICE)
                 .select()
                 .apis(Predicates.not<RequestHandler>(RequestHandlerSelectors.basePackage(BASE_PACKAGE)))
                 .build().pathProvider(object : RelativePathProvider(null) {
@@ -42,15 +42,15 @@ class SwaggerConfig {
     private fun apiInfo(): ApiInfo {
 
         return ApiInfoBuilder()
-                .title(MICROSSERVICO_PAGAMENTO_AUTOMATICO)
-                .description(MICROSSERVICO_PAGAMENTO_AUTOMATICO)
+                .title(CONTABILIZEI_SERVICE)
+                .description(CONTABILIZEI_SERVICE)
                 .version("1.0")
                 .contact(Contact("Contabilizei Inc.", "https://www.contabilizei.com.br", "sistema@contabilizei.com.br"))
                 .build()
     }
 
     companion object {
-        private const val MICROSSERVICO_PAGAMENTO_AUTOMATICO = "microsservico-pagamento-automatico"
+        private const val CONTABILIZEI_SERVICE = "contabilizei-service"
         private const val BASE_PACKAGE = "org.springframework.boot"
     }
 
