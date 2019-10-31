@@ -21,7 +21,7 @@ class ExceptionsHandler {
 
         LOGGER.log(Level.SEVERE, e.message, e)
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
                 .body(ValidationValidDTO("Erro de validação!", e.bindingResult.fieldErrors))
     }
 
