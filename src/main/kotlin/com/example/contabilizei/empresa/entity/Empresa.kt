@@ -1,7 +1,7 @@
-package com.example.contabilizei.empresa.model
+package com.example.contabilizei.empresa.entity
 
 import com.example.contabilizei.audit.AuditModel
-import com.example.contabilizei.imposto.model.Imposto
+import com.example.contabilizei.imposto.entity.Imposto
 import javax.persistence.*
 
 @Entity

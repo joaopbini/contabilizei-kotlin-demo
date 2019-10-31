@@ -3,7 +3,7 @@ package com.example.contabilizei.imposto.service
 import com.example.contabilizei.empresa.exception.EmpresaNotFoundException
 import com.example.contabilizei.empresa.service.EmpresaService
 import com.example.contabilizei.imposto.dto.ImpostoDTO
-import com.example.contabilizei.imposto.model.Imposto
+import com.example.contabilizei.imposto.entity.Imposto
 import com.example.contabilizei.imposto.repository.ImpostoRepository
 import com.example.contabilizei.utils.toDateBR
 import org.springframework.data.domain.Page

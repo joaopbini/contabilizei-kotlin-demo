@@ -1,7 +1,7 @@
-package com.example.contabilizei.imposto.model
+package com.example.contabilizei.imposto.entity
 
 import com.example.contabilizei.audit.AuditModel
-import com.example.contabilizei.empresa.model.Empresa
+import com.example.contabilizei.empresa.entity.Empresa
 import com.fasterxml.jackson.annotation.JsonIgnore
 import java.math.BigDecimal
 import java.util.*

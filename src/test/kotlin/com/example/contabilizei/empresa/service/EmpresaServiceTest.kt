@@ -1,11 +1,12 @@
 package com.example.contabilizei.empresa.service
 
 import com.example.contabilizei.empresa.dto.EmpresaDTO
-import com.example.contabilizei.empresa.model.Empresa
+import com.example.contabilizei.empresa.entity.Empresa
 import com.example.contabilizei.empresa.repository.EmpresaRepository
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -38,6 +39,8 @@ class EmpresaServiceTest {
         every { empresaRepository.save(any<Empresa>()) } returns empresaEsperada
 
         val empresaCriada = empresaService.create(empresaDto)
+
+        verify(exactly = 1) { empresaRepository.save(any<Empresa>()) }
 
         assertEquals(empresaDto, empresaCriada)
 
